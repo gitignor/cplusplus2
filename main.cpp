@@ -1,7 +1,7 @@
 /*
  * Aleksei Nikiforov TARgv17. Домашнее задание №3
  * Ограничение вывода треугольника:
- * Мин высота - 2 (потому что от 2 единиц фигура похожа на треугольник)
+ * Мин высота - 1
  * Макс высота - 30
  * */
 #include <QCoreApplication>
@@ -19,15 +19,15 @@ int main(int argc, char *argv[])
     QTextStream cin(stdin);
 
     int height=0;
-    while (height<=1 || height>30) {
-        QString askTriangle = "Введите высоту треугольника. Минимальная высота равна 2. Максимальная высота равна 30 условным единицам";
+    while (height<=0 || height>30) {
+        QString askTriangle = "Введите высоту треугольника. Минимальная высота равна 1. Максимальная высота равна 30 условным единицам";
         qDebug() << askTriangle;
         cin >>height;
     }
 
     qDebug() << "Начинаю рисовать треугольник высотой"<< height << "условных единиц\n";
     printTriangle(height); // call function printTriangle with arg height
-    qDebug() << "\nТреугольник нарисован!\nКоенц выполнения программы";
+    qDebug() << "\nТреугольник нарисован!\nКонец выполнения программы";
     return a.exec();
 }
 
